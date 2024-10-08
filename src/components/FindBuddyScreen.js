@@ -16,14 +16,28 @@ const FindBuddyScreen = () => {
   );
 
   return (
-    <View style={styles.container}>
+    <>
+        <StatusBar backgroundColor="#003b73" barStyle="light-content" />
+        <View style={styles.container}>
+      {/* Header */}
+      <View style={styles.headerContainer}>
+        <Icon name="arrow-back" size={24} color="white" />
+        <Text style={styles.headerText}>Search Buddy</Text>
+        <Icon name="filter-list" size={24} color="white" />
+      </View>
+
+      {/* Search Bar */}
       <SearchBar
         placeholder="Search Buddy..."
         onChangeText={setSearch}
         value={search}
         round
         lightTheme
+        containerStyle={styles.searchBarContainer}
+        inputContainerStyle={styles.searchInputContainer}
       />
+
+      {/* List of Buddies */}
       <FlatList
         data={filteredBuddies}
         keyExtractor={(item) => item.name}
@@ -39,6 +53,7 @@ const FindBuddyScreen = () => {
         )}
       />
     </View>
+    </>
   );
 };
 
@@ -46,6 +61,27 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f2f2f2',
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 16,
+    backgroundColor: '#003b73',
+  },
+  headerText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  searchBarContainer: {
+    backgroundColor: 'transparent',
+    borderBottomColor: 'transparent',
+    borderTopColor: 'transparent',
+    paddingBottom: 16,
+  },
+  searchInputContainer: {
+    backgroundColor: '#e0e0e0',
   },
 });
 

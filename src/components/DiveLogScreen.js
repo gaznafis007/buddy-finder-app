@@ -2,7 +2,9 @@ import React from 'react'
 
 const DiveLogScreen = () => {
   return (
-    <div>DiveLogScreen</div>
+    <View>
+      <Text>Dive Log Screen</Text>
+    </View>
   )
 }
 

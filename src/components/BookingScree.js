@@ -2,9 +2,9 @@ import React from 'react'
 
 const BookingScree = () => {
     return (
-        <div>
-            this is booking screen
-        </div>
+        <View>
+      <Text>Booking Screen</Text>
+    </View>
     );
 };
 
